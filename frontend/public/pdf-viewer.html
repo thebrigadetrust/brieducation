@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #f2f2f2;
+        }
+        .viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <embed id="pdfEmbed" class="viewer" type="application/pdf">
+</body>
+
+<script>
+    const url = new URLSearchParams(window.location.search).get("file");
+    document.getElementById("pdfEmbed").src = url;
+</script>
+</html>

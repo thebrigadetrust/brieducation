@@ -1,0 +1,121 @@
+Steps to run the frontend (Windows — PowerShell)
+
+Prerequisites:
+- Node.js LTS (recommended v18.x or v20.x). Check with `node -v`.
+- npm (comes with Node). Check with `npm -v`.
+- You are in the project folder `D:\Brigade_Education_trust\Brigade_Education_trust\frontend` in PowerShell.
+
+1) Install dependencies
+
+Open PowerShell in the `frontend` folder and run:
+
+# install project dependencies
+npm install
+
+Notes:
+- This project uses `react-scripts` (Create React App). Installation will create `node_modules` and use versions from `package-lock.json` if present.
+
+2) Start development server (hot reload)
+
+# start dev server (default: http://localhost:3000)
+npm start
+
+
+- After the server starts, open http://localhost:3000 in a browser.
+- If `PORT` is in use you can set a new port before starting: ` $env:PORT=3001; npm start` (PowerShell syntax).
+
+3) Build for production
+
+
+# generate a production build in the 'build' folder
+npm run build
+
+
+- The `build` folder contains optimized static files you can deploy to any static host.
+
+4) Run production build locally (optional)
+
+You can serve the `build` folder with a static server to verify production output. Example using `serve` (install globally first):
+
+# install serve (one-time global install)
+
+npm install -g serve
+# serve the production build on port 5000
+serve -s build -l 5000
+
+
+5) Notes about PDF viewer and PDF files
+- The app's `PdfViewer` accepts a `file` URL query param: `/pdf-view?file=<FILE_URL>`.
+- In `LandingPage` the helper `openPdf` constructs URLs like `http://localhost:3000/pdfs/<name>` — that implies a backend at port 3000. If you don't have a backend, you can open local PDF paths instead, for example:
+  - View a PDF served from the React `public` folder: `/pdf-view?file=/pdfs/audit_report_2019-2020.pdf`
+  - Example: when the dev server is running, open:
+    `http://localhost:3000/pdf-view?file=/pdfs/audit_report_2019-2020.pdf`
+- If you pass external URLs be careful about CORS and ensure the external host allows embedding.
+
+6) Environment variables
+- CRA uses `.env` files. Place values in `.env` at the project root if needed. Example to change the homepage or base URL.
+
+7) Common troubleshooting
+- "npm install" fails: remove `node_modules` and `package-lock.json` and retry: `rm -r node_modules; rm package-lock.json; npm install` (PowerShell: `Remove-Item -Recurse -Force node_modules; Remove-Item package-lock.json`).
+- Port in use: set `PORT` env as shown earlier.
+- React-scripts errors: ensure Node version is compatible (Node 18+ recommended).
+
+8) Running tests (if needed)
+npm test
+
+This runs CRA tests in watch mode. Use `npm test -- --watchAll=false` to run once.
+
+9) Linting / Formatting
+- This repo doesn't include an explicit linter script, but you can add ESLint/Prettier if desired.
+
+10) Optional: Serve PDFs from a simple HTTP server (if you want to mimic the `http://localhost:3000` used in `openPdf`)
+
+If you prefer to serve `public/pdfs` on port 3000 (mimics backend), you can run a quick static server from the `public` folder in a separate terminal. Example using `http-server`:
+
+
+# install http-server (one-time)
+npm install -g http-server
+# serve the public folder on port 3000 (run from frontend/public)
+cd public; http-server -p 3000
+
+
+Then `http://localhost:3000/pdfs/audit_report_2019-2020.pdf` will be available.
+
+11) Summary (quick copy)
+
+
+cd D:\Brigade_Education_trust\Brigade_Education_trust\frontend
+npm install
+npm start
+# (open http://localhost:3000)
+
+
+If you want, I can:
+- run `npm install` and `npm start` here to verify (I will ask before installing packages), or
+- add a small README or script that serves PDF files on port 3000 automatically.
+
+
+
+simple:
+1.change to frontend folder
+2.npm install
+3.npm install @emailjs/browser
+4.npm start
+(by default runs on 3000)
+
+
+
+images:
+public/
+ └── members/
+     ├── fundamental/
+     │   ├── general-pedagogy/
+     │   ├── assessment/
+     │   └── curriculum/
+     └── discipline/
+         ├── mathematics/
+         ├── science/
+         ├── languages/
+         ├── social-science/
+         └── arts/
+members is common folder under change names and images
