@@ -264,16 +264,16 @@ export default function LandingPage() {
     ];
 
 
-    const openPdf = (pdfName, mode = 'compliance') => {
+    const openPdf = (pdfName, mode = 'newtab') => {
         const pdfRelative = `/pdfs/${pdfName}`;
         if (mode === 'compliance') {
             // show inside Compliance page
             localStorage.setItem('selectedPdf', pdfRelative);
             setCurrentPage('compliance');
         } else {
-            // open in a new tab using the pdf-view route; use absolute URL
+            // open in a named window so subsequent opens reuse the same tab
             const absoluteUrl = `${window.location.origin}${pdfRelative}`;
-            window.open(`/pdf-view?file=${encodeURIComponent(absoluteUrl)}`, "_blank");
+            window.open(`/pdf-view?file=${encodeURIComponent(absoluteUrl)}`, "brigade_pdf_viewer");
         }
     };
 
@@ -413,10 +413,10 @@ export default function LandingPage() {
 
                                     {/* LEVEL 2 */}
                                     <ul className="dropdown lvl2">
-                                        <li onClick={() => openPdf("statutory_doc_3.pdf", 'compliance')}>12A, IT Dept., GoI</li>
-                                        <li onClick={() => openPdf("statutory_doc_2.pdf", 'compliance')}>80G, IT Dept., GoI</li>
-                                        <li onClick={() => openPdf("statutory_doc_1.pdf", 'compliance')}>Approval Letter form CSR1,Min.Of Corp.Affiars,GoI</li>
-                                        <li onClick={() => openPdf("statutory_doc_4.pdf", 'compliance')}>Darpan Regn, Neeti Ayog, GoI</li>
+                                        <li onClick={() => openPdf("statutory_doc_3.pdf", 'newtab')}>12A, IT Dept., GoI</li>
+                                        <li onClick={() => openPdf("statutory_doc_2.pdf", 'newtab')}>80G, IT Dept., GoI</li>
+                                        <li onClick={() => openPdf("statutory_doc_1.pdf", 'newtab')}>Approval Letter form CSR1,Min.Of Corp.Affiars,GoI</li>
+                                        <li onClick={() => openPdf("statutory_doc_4.pdf", 'newtab')}>Darpan Regn, Neeti Ayog, GoI</li>
                                     </ul>
                                 </li>
 
@@ -426,12 +426,12 @@ export default function LandingPage() {
 
                                     {/* LEVEL 2 */}
                                     <ul className="dropdown lvl2">
-                                        <li onClick={() => openPdf("audit_report_2019-2020.pdf", 'compliance')}>Audit Report 2019–2020</li>
-                                        <li onClick={() => openPdf("audit_report_2020-2021.pdf", 'compliance')}>Audit Report 2020–2021</li>
-                                        <li onClick={() => openPdf("audit_report_2021-2022.pdf", 'compliance')}>Audit Report 2021–2022</li>
-                                        <li onClick={() => openPdf("audit_report_2022-2023.pdf", 'compliance')}>Audit Report 2022–2023</li>
-                                        <li onClick={() => openPdf("audit_report_2023-2024.pdf", 'compliance')}>Audit Report 2023–2024</li>
-                                        <li onClick={() => openPdf("audit_report_2024-2025.pdf", 'compliance')}>Audit Report 2024–2025</li>
+                                        <li onClick={() => openPdf("audit_report_2019-2020.pdf", 'newtab')}>Audit Report 2019–2020</li>
+                                        <li onClick={() => openPdf("audit_report_2020-2021.pdf", 'newtab')}>Audit Report 2020–2021</li>
+                                        <li onClick={() => openPdf("audit_report_2021-2022.pdf", 'newtab')}>Audit Report 2021–2022</li>
+                                        <li onClick={() => openPdf("audit_report_2022-2023.pdf", 'newtab')}>Audit Report 2022–2023</li>
+                                        <li onClick={() => openPdf("audit_report_2023-2024.pdf", 'newtab')}>Audit Report 2023–2024</li>
+                                        <li onClick={() => openPdf("audit_report_2024-2025.pdf", 'newtab')}>Audit Report 2024–2025</li>
                                     </ul>
                                 </li>
 
