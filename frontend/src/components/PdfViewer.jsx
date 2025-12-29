@@ -3,7 +3,8 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 
 export default function PdfViewer() {
     const params = new URLSearchParams(window.location.search);
-    const file = params.get("file");
+    const raw = params.get("file");
+    const file = raw ? decodeURIComponent(raw) : null;
 
     return (
         <div style={{ height: "100vh" }}>
