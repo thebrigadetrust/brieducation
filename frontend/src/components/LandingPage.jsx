@@ -272,8 +272,9 @@ export default function LandingPage() {
             setCurrentPage('compliance');
         } else {
             // open in a named window so subsequent opens reuse the same tab
+            // use the static /pdf-viewer.html (served from public/) to avoid server 404s
             const absoluteUrl = `${window.location.origin}${pdfRelative}`;
-            window.open(`/pdf-view?file=${encodeURIComponent(absoluteUrl)}`, "brigade_pdf_viewer");
+            window.open(`/pdf-viewer.html?file=${encodeURIComponent(absoluteUrl)}`, "brigade_pdf_viewer");
         }
     };
 
