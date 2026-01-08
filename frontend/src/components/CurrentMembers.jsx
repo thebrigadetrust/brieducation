@@ -1,14 +1,11 @@
 import React from "react";
 import "./CurrentMembers.css";
-import defaultPhoto from "../assets/atriya.jpg";
+import defaultPhoto from "../assets/user.png";
 
 /* -------------------------------------------------
    SHARED LAYOUT
 -------------------------------------------------- */
 function MembersLayout({ title, sections, members, basePath }) {
-  // Accept either grouped `sections` (array of {section, folder, members})
-  // or a flat `members` array. If `sections` is not provided, create a
-  // single anonymous group from `members` so the rendering code can be unified.
   const groupsToRender = (sections && sections.length)
     ? sections
     : [{ section: null, folder: null, members: members || [] }];
@@ -24,11 +21,6 @@ function MembersLayout({ title, sections, members, basePath }) {
 
             <div className="dept-members-grid">
               {group.members.map((m, i) => {
-                // Resolve image source:
-                // - If m.img is falsy -> use bundled defaultPhoto
-                // - If m.img is a string and absolute -> use it directly
-                // - If m.img is a string and contains a subpath (e.g. "folder/name.jpg") -> prepend basePath
-                // - If m.img is a simple filename and the group has a folder -> prepend basePath/group.folder
                 let imgSrc = defaultPhoto;
                 if (m && m.img) {
                   if (typeof m.img === 'string') {
@@ -43,7 +35,6 @@ function MembersLayout({ title, sections, members, basePath }) {
                       imgSrc = `${basePath}/${m.img}`;
                     }
                   } else {
-                    // m.img might be an imported module (resolved to a URL) - use it directly
                     imgSrc = m.img;
                   }
                 }
@@ -91,10 +82,45 @@ function MembersLayout({ title, sections, members, basePath }) {
 export function FundamentalPedagogyMembers() {
   // Flattened list (no sections) — images include folder paths relative to basePath
   const members = [
-    { name: "Member 1", details: "Pedagogy Specialist", img: "general-pedagogy/1.jpg" },
-    { name: "Member 2", details: "Pedagogy Specialist", img: "general-pedagogy/2.jpg" },
-    { name: "Member 3", details: "Assessment Expert", img: "assessment/1.jpg" },
-    { name: "Member 4", details: "Curriculum Expert", img: "curriculum/1.jpg" },
+    { name: "Member 1", details: "Updating soon", img: "general-pedagogy/1.jpg" },
+    { name: "Member 2", details: "Updating soon", img: "general-pedagogy/2.jpg" },
+    { name: "Member 3", details: "Updating soon", img: "assessment/1.jpg" },
+    { name: "Member 5", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 6", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 7", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 8", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 9", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 10", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 11", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 12", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 13", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 14", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 15", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 16", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 17", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 18", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 19", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 20", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 21", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 22", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 23", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 24", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 25", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 26", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 27", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 28", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 29", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 30", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 31", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 32", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 33", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 34", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 35", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 36", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 37", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 38", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 39", details: "Updating soon", img: "curriculum/1.jpg" },
+    { name: "Member 40", details: "Updating soon", img: "curriculum/1.jpg" },
   ];
 
   return (
@@ -112,9 +138,37 @@ export function FundamentalPedagogyMembers() {
 export function DisciplinePedagogyMembers() {
   // Flattened list (no sections)
   const members = [
-    { name: "Math Member 1", details: "Math Expert", img: "mathematics/1.jpg" },
-    { name: "Science Member 1", details: "Science Expert", img: "science/1.jpg" },
-    { name: "Language Member 1", details: "Language Expert", img: "languages/1.jpg" },
+    { name: " Member 1", details: "Updating soon", img: "mathematics/1.jpg" },
+    { name: " Member 2", details: "Updating soon", img: "science/1.jpg" },
+    { name: " Member 3", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 4", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 5", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 6", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 7", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 8", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 9", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 10", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 11", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 12", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 13", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 14", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 15", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 16", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 17", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 18", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 19", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 20", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 21", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 22", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 23", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 24", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 25", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 26", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 27", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 28", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 29", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 30", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 31", details: "Updating soon", img: "languages/1.jpg" },
   ];
 
   return (
@@ -132,10 +186,38 @@ export function DisciplinePedagogyMembers() {
 -------------------------------------------------- */
 export function FITMembers() {
   const members = [
-    { name: "Trainer 1", details: "Community Trainer", img: "community-trainers/1.jpg" },
-    { name: "Trainer 2", details: "Community Trainer", img: "community-trainers/2.jpg" },
-    { name: "Coordinator 1", details: "School Coordinator", img: "school-coordinators/1.jpg" },
-    { name: "M&E 1", details: "Monitoring Specialist", img: "m_and_e/1.jpg" },
+    { name: " Member 1", details: "Updating soon", img: "mathematics/1.jpg" },
+    { name: " Member 2", details: "Updating soon", img: "science/1.jpg" },
+    { name: " Member 3", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 4", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 5", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 6", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 7", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 8", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 9", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 10", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 11", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 12", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 13", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 14", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 15", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 16", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 17", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 18", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 19", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 20", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 21", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 22", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 23", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 24", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 25", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 26", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 27", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 28", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 29", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 30", details: "Updating soon", img: "languages/1.jpg" },
+    { name: " Member 31", details: "Updating soon", img: "languages/1.jpg" },
+    
   ];
 
   return (

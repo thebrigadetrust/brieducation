@@ -61,7 +61,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding:10px 10px 1px 10px;
+  padding: 10px 10px 1px 10px;
   flex-wrap: wrap;
 }
 
@@ -704,6 +704,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -714,7 +715,7 @@ body {
   .hero-carousel {
     height: 60vh;
   }
-  
+
   .split-text-overlay,
   .image-text-overlay {
     font-size: 1.4rem;
@@ -927,6 +928,7 @@ body {
   font-weight: 600;
   color: #222;
 }
+
 @media (max-width: 768px) {
   .logos-grid {
     grid-template-columns: 1fr;
@@ -1001,7 +1003,7 @@ body {
   padding: 24px 28px;
   border-left: 6px solid var(--green-dark);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
-  min-height: 250px;
+  min-height: 350px;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -1622,6 +1624,41 @@ body {
   gap: 25px;
   align-items: center;
   margin-right: 14px;
+}
+
+/* ===== FOOTER RESOURCE TEAM ALIGNMENT FIX ===== */
+
+.footer-parent {
+  font-weight: 700;
+  margin-top: 14px;
+  color: #ffffff;
+}
+
+.footer-sub {
+  font-size: 13px;
+  margin-left: 14px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* ARC parent inside Current Resource Team */
+.footer-sub-parent {
+  margin-left: 14px;
+  font-weight: 600;
+}
+
+/* ARC children (Fundamental / Discipline) */
+.footer-sub-child {
+  margin-left: 30px;
+  /* 🔥 main fix */
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Hover clarity */
+.footer-sub:hover,
+.footer-parent:hover {
+  opacity: 1;
 }
 
 .social-icon {
@@ -3028,12 +3065,10 @@ body.menu-open {
 }
 
 .home-quote {
-  background: linear-gradient(
-    to right,
-    rgba(42, 122, 31, 0.05),
-    rgba(42, 122, 31, 0.12),
-    rgba(42, 122, 31, 0.05)
-  );
+  background: linear-gradient(to right,
+      rgba(42, 122, 31, 0.05),
+      rgba(42, 122, 31, 0.12),
+      rgba(42, 122, 31, 0.05));
   padding: 40px 20px;
   text-align: center;
   margin-top: 10px;
@@ -3056,6 +3091,7 @@ body.menu-open {
   font-weight: 600;
   letter-spacing: 0.3px;
 }
+
 @media (max-width: 768px) {
   .home-quote {
     padding: 25px 15px;

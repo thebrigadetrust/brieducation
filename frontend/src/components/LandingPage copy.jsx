@@ -2,6 +2,11 @@ import React from "react";
 import "./LandingPage.css";
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.jpeg";
+import slider1 from "../assets/slider1.jpg";
+import slider4 from "../assets/slider4.jpg";
+import slider5 from "../assets/slider5.jpg";
+import slider6 from "../assets/slider6.jpg";
+import slider7 from "../assets/slider7.jpg";
 import smc1 from "../assets/smc1.jpeg";
 import smc2 from "../assets/smc2.jpeg";
 import smc3 from "../assets/smc3.jpeg";
@@ -11,12 +16,10 @@ import project23 from "../assets/project23.jpeg";
 import project31 from "../assets/project31.jpeg";
 import project32 from "../assets/project32.jpeg";
 import project33 from "../assets/project33.jpeg";
-
 import Founder from "./Founder"
 import logo_1 from "../assets/logo_1111.png"
 import logo_2 from "../assets/logo_22.png"
-import defaultPhoto from "../assets/user.png"
-
+import defaultPhoto from "../assets/atriya.jpg"
 import hanumanthaRao from "../assets/hanumanthrao.jpeg"
 import charantej from "../assets/charantej.jpeg"
 import rajeshwari from "../assets/Rajeshwari.jpeg"
@@ -29,8 +32,6 @@ import kvatriya from "../assets/kvatriya.jpeg"
 import pmlakshmi from "../assets/pmlakshmi.jpeg"
 import ushabhargav from "../assets/ushabhargav.jpeg"
 import radhakrishna from "../assets/radhakrishna.jpeg"
-import tnr from "../assets/tnr.jpeg"
-
 import { Project1, Project2, Project3, Project4, Project5 } from "./ProjectPublications";
 import Compliance from "./Compliance";
 import Introduction from "./Introduction";
@@ -92,30 +93,27 @@ export default function LandingPage() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const slides = [
-        { type: 'split', images: [splitImg1, splitImg2], texts: ['Ancient Education', 'Modern Education'], duration: 60000 },
-        { type: 'image', images: [smc2], texts: ['Project-1 (SMC Training)'], duration: 15000 },
-        { type: 'image', images: [smc3], texts: ['Project-1 (SMC Training)'], duration: 15000 },
-        { type: 'image', images: [smc1], texts: ['Project-1 (SMC Training)'], duration: 15000 },
-        { type: 'image', images: [project21], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project22], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project23], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project31], texts: ['Project-3 (ESEP)'], duration: 15000 },
-        { type: 'image', images: [project32], texts: ['Project-3 (ESEP)'], duration: 15000 },
-        { type: 'image', images: [project33], texts: ['Project-3 (ESEP)'], duration: 15000 }
+        { type: 'split', images: [splitImg1, splitImg2], texts: ['Ancient Image ', 'Modern Image '], duration: 60000 },
+        { type: 'image', images: [smc2], texts: ['Project-1'], duration: 15000 },
+        { type: 'image', images: [smc3], texts: ['Project-1'], duration: 15000 },
+        { type: 'image', images: [smc1], texts: ['Project-1'], duration: 15000 },
+        { type: 'image', images: [project21], texts: ['Project-2'], duration: 15000 },
+        { type: 'image', images: [project22], texts: ['Project-2'], duration: 15000 },
+        { type: 'image', images: [project23], texts: ['Project-2'], duration: 15000 },
+        { type: 'image', images: [project31], texts: ['Project-3'], duration: 15000 },
+        { type: 'image', images: [project32], texts: ['Project-3'], duration: 15000 },
+        { type: 'image', images: [project33], texts: ['Project-3'], duration: 15000 }
     ];
     const totalSlides = slides.length;
 
     // Auto-slide effect
     useEffect(() => {
-        const currentDuration = slides[currentSlide].duration;
-
-        const timeout = setTimeout(() => {
+        const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % totalSlides);
-        }, currentDuration);
+        }, 5000); // Change slide every 5 seconds
 
-        return () => clearTimeout(timeout);
-    }, [currentSlide, slides, totalSlides]);
-
+        return () => clearInterval(interval);
+    }, [totalSlides]);
 
     // Update carousel position
     useEffect(() => {
@@ -131,6 +129,8 @@ export default function LandingPage() {
         });
     }, [currentSlide]);
 
+    // Toggle a body class so we can prevent scrolling and style page when
+    // the mobile menu (drawer) is open.
     useEffect(() => {
         if (mobileMenuOpen) {
             document.body.classList.add('menu-open');
@@ -164,7 +164,7 @@ export default function LandingPage() {
                 },
                 {
                     name: "K S Jyothi",
-                    details: "M Com; Diploma in Computer Accountancy (Statutory)",
+                    details: "M Com; Dip in Computer Accountancy (Statutory)",
                     img: ksjyothi,
                 },
                 {
@@ -184,7 +184,7 @@ export default function LandingPage() {
                         {
                             name: "Shri VVSS Sai Krishna",
                             details:
-                                "MA; Diploma in Electronics; Founder – Krishnapriya Foundation & Vedic Scholar-Indian Knowledge System",
+                                "MA; Dip in Electronics; Founder – Krishnapriya Foundation & Vedic Scholar-Indian Knowledge System",
                             img: vsssaikishna,
                         },
                     ],
@@ -214,7 +214,7 @@ export default function LandingPage() {
                         },
                         {
                             name: "Dr K Jagan Mohan Rao",
-                            details: "PhD in English; M. Sc Psychology; LLB,(LLM)",
+                            details: "PhD in English; M. Sc Psychology; (LLB, LLM)",
                             img: jaganmohanrao,
                         },
                         {
@@ -253,9 +253,9 @@ export default function LandingPage() {
                     title: "Technology Integration",
                     members: [
                         {
-                            name: "TNR Koushik",
-                            details: " B.E (ECE with Minors in AI & ML);Diploma in ECE;",
-                            img: tnr,
+                            name: "T Koushik",
+                            details: "Dip in ECE; BE (ECE with Minors in AI & ML)",
+                            img: defaultPhoto,
                         },
                     ],
                 },
@@ -267,10 +267,12 @@ export default function LandingPage() {
     const openPdf = (pdfName, mode = 'newtab') => {
         const pdfRelative = `/pdfs/${pdfName}`;
         if (mode === 'compliance') {
-
+            // show inside Compliance page
             localStorage.setItem('selectedPdf', pdfRelative);
             setCurrentPage('compliance');
         } else {
+            // open in a named window so subsequent opens reuse the same tab
+            // use the static /pdf-viewer.html (served from public/) to avoid server 404s
             const absoluteUrl = `${window.location.origin}${pdfRelative}`;
             window.open(`/pdf-viewer.html?file=${encodeURIComponent(absoluteUrl)}`, "brigade_pdf_viewer");
         }
@@ -286,7 +288,7 @@ export default function LandingPage() {
 
                     <div className="trust-title-block center-title">
                         <h1 className="trust-title">THE BRIGADE EDUCATIONAL TRUST</h1>
-                        <p className="trust-subtitle">We Steer Human Engineering Potential...</p>
+                        <p className="trust-subtitle">We Steer Human Engineering...</p>
                     </div>
 
                     <button id="hamburger" className="hamburger" aria-label="Toggle menu" onClick={() => setMobileMenuOpen(prev => !prev)}>☰</button>
@@ -314,7 +316,7 @@ export default function LandingPage() {
                             <button className="menu-btn" onClick={() => toggleSubmenu('about')}>About ▼</button>
                             <ul className="submenu">
                                 <li><a onClick={() => { setCurrentPage("founder"); setMobileMenuOpen(false); }}>Founder</a></li>
-                                <li><a onClick={() => { setCurrentPage("team"); setMobileMenuOpen(false); }}>Core Team</a></li>
+                                <li><a onClick={() => { setCurrentPage("team"); setMobileMenuOpen(false); }}>Board Members</a></li>
                                 <li><a onClick={() => { setCurrentPage("vision"); setMobileMenuOpen(false); }}>Vision & Mission</a></li>
                                 <li><a onClick={() => { setCurrentPage("objectives"); setMobileMenuOpen(false); }}>Aim & Objectives</a></li>
                             </ul>
@@ -542,13 +544,13 @@ export default function LandingPage() {
                             <div className="footer-branding-col">
                                 <img src={logo} alt="Trust Logo" className="footer-logo" />
                                 <h3>The Brigade Educational Trust</h3>
-                                <p>We Steer Human Engineering Potential...</p>
+                                <p>We Steer Human Engineering...</p>
                             </div>
 
                             <div className="footer-col">
                                 <h4>About</h4>
                                 <p onClick={() => setCurrentPage("founder")}>Founder</p>
-                                <p onClick={() => setCurrentPage("team")}>Core Team</p>
+                                <p onClick={() => setCurrentPage("team")}>Board Members</p>
                                 <p onClick={() => setCurrentPage("vision")}>Vision & Mission</p>
                                 <p onClick={() => setCurrentPage("objectives")}>Aim & Objectives</p>
                             </div>
@@ -564,44 +566,10 @@ export default function LandingPage() {
 
                             <div className="footer-col">
                                 <h4>Principles, Practices & Policy</h4>
-
                                 <p onClick={() => setCurrentPage("introduction")}>Introduction</p>
-                                <p onClick={() => setCurrentPage("invitation")}>Invitation</p>
-
-                                {/* Previous Resource Team */}
-                                <p className="footer-parent">Previous Resource Team</p>
-                                <p className="footer-sub" onClick={() => setCurrentPage("arc")}>
-                                    Academic Resource Council (ARC)
-                                </p>
-                                <p className="footer-sub" onClick={() => setCurrentPage("fit")}>
-                                    Field Implementation Team (FIT)
-                                </p>
-
-                                {/* Current Resource Team */}
-                                <p className="footer-parent">Current Resource Team</p>
-
-                                <p className="footer-sub footer-sub-parent">
-                                    Academic Resource Council (ARC)
-                                </p>
-                                <p
-                                    className="footer-sub footer-sub-child"
-                                    onClick={() => setCurrentPage("arc-fundamental")}
-                                >
-                                    Fundamental & General Pedagogy
-                                </p>
-                                <p
-                                    className="footer-sub footer-sub-child"
-                                    onClick={() => setCurrentPage("arc-discipline")}
-                                >
-                                    Discipline-Specific Pedagogy
-                                </p>
-
-                                <p
-                                    className="footer-sub footer-sub-parent"
-                                    onClick={() => setCurrentPage("currentfit")}
-                                >
-                                    Field Implementation Team (FIT)
-                                </p>
+                                <p onClick={() => setCurrentPage("compliance")}>Invitation</p>
+                                <p onClick={() => setCurrentPage("compliance")}>Previous Resource Team</p>
+                                <p onClick={() => setCurrentPage("compliance")}>Current Resource Team</p>
                             </div>
 
                             <div className="footer-col">

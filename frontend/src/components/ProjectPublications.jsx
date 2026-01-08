@@ -104,22 +104,22 @@ export function Project1() {
                 </div>
 
                 {/* IMAGE + VIDEO SECTION */}
-                <div className="project-media">
+                <div className="project-media images-only">
                     {/* LEFT SIDE IMAGES */}
                     <div className="media-section">
                         <h2 className="overview-heading">Images</h2>
                         <div className="media-images">
-                            <img src="/images/ccep1.jpg" alt="SMC Training" />
-                            <img src="/images/ccep2.jpg" alt="SMC Training" />
-                            <img src="/images/ccep3.jpg" alt="SMC Training" />
-                            <img src="/images/ccep4.jpg" alt="SMC Training" />
-                            <img src="/images/ccep5.jpg" alt="SMC Training" />
-                            <img src="/images/ccep6.jpg" alt="SMC Training" />
+                            <img src="/images/project11.jpeg" alt="SMC Training" />
+                            <img src="/images/project12.jpeg" alt="SMC Training" />
+                            <img src="/images/project13.jpeg" alt="SMC Training" />
+                            <img src="/images/project14.jpeg" alt="SMC Training" />
+                            <img src="/images/project15.jpeg" alt="SMC Training" />
+                            <img src="/images/project16.jpeg" alt="SMC Training" />
                         </div>
                     </div>
 
                     {/* RIGHT SIDE VIDEO */}
-                    <div className="media-section">
+                    {/* <div className="media-section">
                         <h2 className="overview-heading">Videos</h2>
                         <div className="media-video">
                             <video controls>
@@ -129,7 +129,7 @@ export function Project1() {
                                 <source src="/videos/video2.mp4" type="video/mp4" />
                             </video>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -245,22 +245,22 @@ export function Project2() {
                 </div>
 
                 {/* IMAGE + VIDEO SECTION */}
-                <div className="project-media">
+                <div className="project-media images-only">
                     {/* LEFT SIDE IMAGES */}
                     <div className="media-section">
                         <h2 className="overview-heading">Images</h2>
                         <div className="media-images">
-                            <img src="/images/ccep1.jpg" alt="Training Session" />
-                            <img src="/images/ccep2.jpg" alt="Soft Skills Workshop" />
-                            <img src="/images/ccep3.jpg" alt="Student Interaction" />
-                            <img src="/images/ccep4.jpg" alt="Activity Session" />
-                            <img src="/images/ccep5.jpg" alt="Group Discussion" />
-                            <img src="/images/ccep6.jpg" alt="Assessment Phase" />
+                            <img src="/images/project21.jpeg" alt="Training Session" />
+                            <img src="/images/project22.jpeg" alt="Soft Skills Workshop" />
+                            <img src="/images/project23.jpeg" alt="Student Interaction" />
+                            <img src="/images/project24.jpeg" alt="Activity Session" />
+                            <img src="/images/project25.jpeg" alt="Group Discussion" />
+                            <img src="/images/project26.jpeg" alt="Assessment Phase" />
                         </div>
                     </div>
 
                     {/* RIGHT SIDE VIDEO */}
-                    <div className="media-section">
+                    {/* <div className="media-section">
                         <h2 className="overview-heading">Videos</h2>
                         <div className="media-video">
                             <video controls>
@@ -270,7 +270,7 @@ export function Project2() {
                                 <source src="/videos/video2.mp4" type="video/mp4" />
                             </video>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -390,12 +390,12 @@ export function Project3() {
                     <div className="media-section">
                         <h2 className="overview-heading">Images</h2>
                         <div className="media-images">
-                            <img src="/images/ccep1.jpg" alt="CCEP" />
-                            <img src="/images/ccep2.jpg" alt="CCEP" />
-                            <img src="/images/ccep3.jpg" alt="CCEP" />
-                            <img src="/images/ccep4.jpg" alt="CCEP" />
-                            <img src="/images/ccep5.jpg" alt="CCEP" />
-                            <img src="/images/ccep6.jpg" alt="CCEP" />
+                            <img src="/images/project31.jpeg" alt="CCEP" />
+                            <img src="/images/project32.jpeg" alt="CCEP" />
+                            <img src="/images/project33.jpeg" alt="CCEP" />
+                            <img src="/images/project34.jpeg" alt="CCEP" />
+                            <img src="/images/project35.jpeg" alt="CCEP" />
+                            <img src="/images/project36.jpeg" alt="CCEP" />
                         </div>
                     </div>
 

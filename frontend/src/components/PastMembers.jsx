@@ -185,6 +185,11 @@ export function FITMembers() {
           <p>Independent Scholar & Corporate Personnel</p>
           <p>Social Sector Volunteer</p>
         </div>
+        <div className="member-item">
+          <h3>15. N Sairam</h3>
+          <p>Video-shooting & Editing</p>
+          <p>Technical Resource</p>
+        </div>
       </div>
     </section>
   );
