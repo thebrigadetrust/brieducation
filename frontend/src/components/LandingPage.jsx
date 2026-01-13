@@ -27,7 +27,7 @@ import albharathi from "../assets/albharathi.jpeg"
 import vsssaikishna from "../assets/vsssaikrishna.jpeg"
 import kvatriya from "../assets/kvatriya.jpeg"
 import pmlakshmi from "../assets/pmlakshmi.jpeg"
-import ushabhargav from "../assets/ushabhargav.jpeg"
+import saikanthrao from "../assets/saikantharao.jpeg"
 import radhakrishna from "../assets/radhakrishna.jpeg"
 import tnr from "../assets/tnr.jpeg"
 
@@ -96,12 +96,12 @@ export default function LandingPage() {
         { type: 'image', images: [smc2], texts: ['Project-1 (SMC Training)'], duration: 15000 },
         { type: 'image', images: [smc3], texts: ['Project-1 (SMC Training)'], duration: 15000 },
         { type: 'image', images: [smc1], texts: ['Project-1 (SMC Training)'], duration: 15000 },
-        { type: 'image', images: [project21], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project22], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project23], texts: ['Project-2 (CCEP)'], duration: 15000 },
-        { type: 'image', images: [project31], texts: ['Project-3 (ESEP)'], duration: 15000 },
-        { type: 'image', images: [project32], texts: ['Project-3 (ESEP)'], duration: 15000 },
-        { type: 'image', images: [project33], texts: ['Project-3 (ESEP)'], duration: 15000 }
+        { type: 'image', images: [project21], texts: ['Project-2 (ESEP)'], duration: 15000 },
+        { type: 'image', images: [project22], texts: ['Project-2 (ESEP)'], duration: 15000 },
+        { type: 'image', images: [project23], texts: ['Project-2 (ESEP)'], duration: 15000 },
+        { type: 'image', images: [project31], texts: ['Project-3 (CCEP)'], duration: 15000 },
+        { type: 'image', images: [project32], texts: ['Project-3 (CCEP)'], duration: 15000 },
+        { type: 'image', images: [project33], texts: ['Project-3 (CCEP)'], duration: 15000 }
     ];
     const totalSlides = slides.length;
 
@@ -223,9 +223,9 @@ export default function LandingPage() {
                             img: vasundhara,
                         },
                         {
-                            name: "Ch. Usha Bhargav",
-                            details: "MA Sociology; B Ed; Diploma in Counseling; Dip in EHV",
-                            img: ushabhargav,
+                            name: "Dr. Sai Kantha Rao",
+                            details: "MA., PhD-Sathya Sai  Philosophy",
+                            img: saikanthrao,
                         },
                     ],
                 },
@@ -607,7 +607,7 @@ export default function LandingPage() {
                             <div className="footer-col">
                                 <h4>Contact</h4>
                                 <p onClick={() => window.location.href = "mailto:contact@example.com"}>Email: thebrigadetrust@gmail.com</p>
-                                <p onClick={() => window.location.href = "tel:+919876543210"}>Phone: +91 63020 24306</p>
+                                <p onClick={() => window.location.href = "tel:+919876543210"}>Phone: +91 95158 54020</p>
                                 <p>Hyderabad, Telangana</p>
                             </div>
 
@@ -626,7 +626,7 @@ export default function LandingPage() {
                                 <a href="https://facebook.com" target="_blank">
                                     <img src={fbIcon} alt="Facebook" className="social-icon facebook" />
                                 </a>
-                                <a href="https://instagram.com" target="_blank">
+                                <a href="https://www.instagram.com/brieducation_2019/" target="_blank">
                                     <img src={instaIcon} alt="Instagram" className="social-icon instagram" />
                                 </a>
                                 <a href="https://www.linkedin.com/company/the-brigade-educational-trust/about/" target="_blank">
@@ -658,67 +658,54 @@ export default function LandingPage() {
             {currentPage === "team" && (
                 <section className="team-section">
                     <div className="container">
-
-                        {/* MAIN PAGE HEADING */}
-                        <h2 className="page-title">Core Team</h2>
-
-                        {teamData.map((section, i) => (
-                            <div key={i} className="main-section">
-
-                                {/* LEVEL-2 HEADING */}
-                                <h3 className="main-heading">{section.mainSection}</h3>
-
-                                {/* TRUSTEES (direct members) */}
+                        {teamData.map((section, sIdx) => (
+                            <div className="team-section-block" key={sIdx}>
+                                <h2 className="team-main-heading">{section.mainSection}</h2>
                                 {section.members && (
-                                    <div className="circle-team-grid">
-                                        {section.members.map((m, j) => (
-                                            <div className="circle-card" key={j}>
-                                                <div className="circle-inner">
-                                                    <div className="circle-front">
-                                                        <img src={m.img} alt={m.name} />
+                                    <div className="team-members-grid">
+                                        {section.members.map((m, idx) => (
+                                            <div className="flip-card" key={idx}>
+                                                <div className="flip-card-inner">
+                                                    <div className="flip-card-front">
+                                                        <img src={m.img || defaultPhoto} alt={m.name} />
+                                                        <h3>{m.name}</h3>
                                                     </div>
-                                                    <div className="circle-back">
+                                                    <div className="flip-card-back">
+                                                        <h3>{m.name}</h3>
                                                         <p>{m.details}</p>
                                                     </div>
                                                 </div>
-                                                <h4 className="member-name">{m.name}</h4>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {/* PLANNING → SUB SECTIONS */}
-                                {section.subSections &&
-                                    section.subSections.map((sub, k) => (
-                                        <div key={k} className="sub-section">
-
-                                            {/* LEVEL-3 HEADING */}
-                                            <h4 className="sub-heading">{sub.title}</h4>
-
-                                            <div className="circle-team-grid">
-                                                {sub.members.map((m, l) => (
-                                                    <div className="circle-card" key={l}>
-                                                        <div className="circle-inner">
-                                                            <div className="circle-front">
-                                                                <img src={m.img} alt={m.name} />
-                                                            </div>
-                                                            <div className="circle-back">
-                                                                <p>{m.details}</p>
-                                                            </div>
+                                {section.subSections && section.subSections.map((sub, subIdx) => (
+                                    <div className="team-subsection" key={subIdx}>
+                                        <h3 className="subsection-title">{sub.title}</h3>
+                                        <div className="team-members-grid">
+                                            {sub.members.map((m2, j) => (
+                                                <div className="flip-card" key={j}>
+                                                    <div className="flip-card-inner">
+                                                        <div className="flip-card-front">
+                                                            <img src={m2.img || defaultPhoto} alt={m2.name} />
+                                                            <h3>{m2.name}</h3>
                                                         </div>
-                                                        <h4 className="member-name">{m.name}</h4>
+                                                        <div className="flip-card-back">
+                                                            <h3>{m2.name}</h3>
+                                                            <p>{m2.details}</p>
+                                                        </div>
                                                     </div>
-                                                ))}
-                                            </div>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
+                                    </div>
+                                ))}
                             </div>
                         ))}
                     </div>
                 </section>
             )}
-
-
             {/* ====================== */}
             {/* VISION & MISSION PAGE */}
             {/* ====================== */}

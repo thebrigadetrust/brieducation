@@ -446,10 +446,12 @@
     background: #fff;
     padding: 25px 30px;
     border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
 }
 
 .project-pdf-box h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
     margin-bottom: 15px;
     color: var(--green-dark);
 }

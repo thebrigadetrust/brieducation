@@ -13,19 +13,47 @@
 }
 
 .invitation-card {
-    background: #f7efe4;
-    border-radius: 6px;
+    background: linear-gradient(180deg, #efe6dd 0%, #f8f2ec 100%);
+    border: 6px solid #6b4a3b; 
+    border-radius: 10px;
     padding: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 10px 30px rgba(26, 17, 12, 0.12);
 }
 
-.invitation-img {
-    width: 100%;
-    height: auto;
-    display: block;
+.invitation-content {
+    background: #fff7ef; 
+    padding: 22px;
+    border-radius: 6px;
+    color: #3b2b22;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.invitation-title {
+    color: #6b3f2a;
+    text-align: center;
+    font-size: 1.55rem;
+    margin: 0 0 14px 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.invitation-text p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.invitation-signature {
+    margin-top: 20px;
+    text-align: right;
+    color: #5a3627;
+    font-weight: 700;
+}
+
+.invitation-signature-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #5a3627;
 }
 
 .invite-cta {

@@ -18,7 +18,9 @@ export default function Founder() {
                         </div>
                         <h2 className="founder-name">Shri K. V. Atriya</h2>
                         <p className="founder-title">
-                            Founder President — The Brigade Education Trust
+                            Founder President —
+                            <br></br>
+                            The Brigade Educational Trust
                         </p>
 
                         <blockquote className="founder-quote">

@@ -32,7 +32,7 @@ export default function Introduction() {
         </strong></p>
 
         <p><strong>
-          In order to achieve this, ‘Pan-India Strategic Dialogue Series in Learning-Teaching Advancement’ SDSLTA-PI shall be initiated open to representations from all stake-holders. After end of each session, document in the form of ‘Insights Notes’ shall be recorded and a series of these Insight Notes shall be developed as Annual Cohesive Synthesis Report on ‘Strategic Dialogue Series in Learning-Teaching Advancement ’ shall be published and submitted to Government. 
+          In order to achieve this, ‘Pan-India Strategic Dialogue Series in Learning-Teaching Advancement’ SDSLTA-PI shall be initiated open to representations from all stake-holders. After end of each session, document in the form of ‘Insights Notes’ shall be recorded and a series of these Insight Notes as Annual Cohesive Synthesis Report on ‘Strategic Dialogue Series in Learning-Teaching Advancement ’ shall be published and submitted to Government. 
         </strong></p>
 
         <div className="author">

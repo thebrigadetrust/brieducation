@@ -13,7 +13,7 @@
   align-items: flex-start;
   justify-content: space-around;
   max-width: 1300px;
-  margin: 100px auto;
+  margin: 90px auto;
   margin-bottom: 40px;
   flex-wrap: wrap;
 }
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 250px;
   flex-shrink: 0;
 }
 
@@ -72,7 +72,6 @@
   color: var(--green-dark);
   font-weight: 800;
   margin: 0 0 8px 0;
-  
 }
 
 .founder-content {
